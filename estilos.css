@@ -182,3 +182,11 @@ nav a:hover::after { width:100%; }
   html { scroll-behavior:auto; }
   *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }
+
+/* ===== SEO / LECTURA V3 ===== */
+.post h2 { margin-top: 42px; margin-bottom: 12px; }
+.post p { color:#c5c5c9; font-size:18px; line-height:1.85; }
+.post .lead { line-height:1.7; }
+.post-cta { margin-top:55px; padding-top:28px; border-top:1px solid #292930; }
+.post-cta p { margin-bottom:24px; }
+.post-cta a:not(.button) { color:#ff6a2b; font-weight:800; }
