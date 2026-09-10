@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impulso — Motívate. Actúa. Avanza.</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="index.html">IMPULSO<span>.</span></a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#temas">Temas</a>
+      <a href="#articulos">Artículos</a><a href="contacto.html">Contacto</a>
+      <a href="#reto">Reto 7 días</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">MOTIVACIÓN • DISCIPLINA • CRECIMIENTO</p>
+        <h1>NO ESPERES A SENTIRTE<br><strong>MOTIVADO.</strong></h1>
+        <p class="hero-text">Empieza. Construye disciplina, alcanza tus metas y conviértete en una mejor versión de ti.</p>
+        <a class="button" href="#temas">EMPIEZA AHORA →</a>
+      </div>
+      <div class="hero-shape">+</div>
+    </section>
+
+    <section class="quote">
+      <p>“El primer paso no tiene que ser perfecto. Solo tiene que existir.”</p>
+      <span>— IMPULSO</span>
+    </section>
+
+    <section class="section" id="temas">
+      <p class="eyebrow">ENCUENTRA TU IMPULSO</p>
+      <h2>¿QUÉ QUIERES <span>MEJORAR?</span></h2>
+      <div class="cards">
+        <article><div class="icon">🔥</div><h3>Motivación</h3><p>Ideas para volver a levantarte cuando las ganas desaparecen.</p><a class="card-link" href="motivacion.html">EXPLORAR →</a></article>
+        <article><div class="icon">⚡</div><h3>Disciplina y hábitos</h3><p>Convierte pequeñas acciones en rutinas que puedas mantener.</p><a class="card-link" href="habitos.html">EXPLORAR →</a></article>
+        <article><div class="icon">🎯</div><h3>Metas y productividad</h3><p>Organiza tus objetivos y transforma tus planes en acciones.</p><a class="card-link" href="metas.html">EXPLORAR →</a></article>
+        <article><div class="icon">💪</div><h3>Superación personal</h3><p>Aprende de los errores y sigue avanzando.</p><a class="card-link" href="superacion.html">EXPLORAR →</a></article>
+      </div>
+    </section>
+
+    <section class="section articles" id="articulos">
+      <p class="eyebrow">PARA EMPEZAR</p>
+      <h2>ARTÍCULOS <span>DESTACADOS</span></h2>
+      <div class="article-grid">
+        <article class="article-card"><small>MOTIVACIÓN</small><h3>Cómo recuperar la motivación cuando quieres rendirte</h3><p>La motivación no siempre llega antes de actuar...</p><a href="motivacion-1.html">LEER →</a></article>
+        <article class="article-card"><small>HÁBITOS</small><h3>7 hábitos para construir una disciplina más fuerte</h3><p>Los grandes cambios comienzan con acciones pequeñas...</p><a href="habitos-1.html">LEER →</a></article>
+        <article class="article-card"><small>PRODUCTIVIDAD</small><h3>Cómo dejar de procrastinar y empezar hoy</h3><p>No necesitas terminarlo todo. Necesitas comenzar...</p><a href="metas-3.html">LEER →</a></article>
+      </div>
+    </section>
+
+    <section class="challenge" id="reto">
+      <div>
+        <p class="eyebrow">¿TE ATREVES?</p>
+        <h2>RETO <span>7 DÍAS</span></h2>
+        <p>Durante una semana, haz una acción pequeña cada día para demostrarte que puedes ser constante.</p>
+      </div>
+      <a class="button dark" href="#">ACEPTO EL RETO →</a>
+    </section>
+
+    <section class="daily">
+      <p class="eyebrow">TU RECORDATORIO DE HOY</p>
+      <h2 id="dailyQuote">No necesitas ganas para comenzar.</h2>
+      <button class="outline" onclick="newQuote()">OTRA FRASE</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo">IMPULSO<span>.</span></div>
+    <p>Motívate. Actúa. Avanza.</p>
+    <p class="copyright">© 2026 Impulso. Contenido original. · <a href="privacidad.html">Privacidad</a> · <a href="contacto.html">Contacto</a></p>
+  </footer>
+
+  <script>
+    const quotes = [
+      "No necesitas ganas para comenzar.",
+      "La constancia vence a la intensidad pasajera.",
+      "Haz hoy algo por lo que tu yo del futuro te agradezca.",
+      "Un pequeño paso sigue siendo un paso.",
+      "Tu progreso no tiene que ser perfecto para ser real."
+    ];
+    function newQuote() {
+      const q = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("dailyQuote").textContent = q;
+    }
+  </script>
+</body>
+</html>
