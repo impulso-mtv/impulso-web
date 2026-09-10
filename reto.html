@@ -1,1 +1,147 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Reto 7 días — Impulso</title><link rel="stylesheet" href="estilos.css"></head><body><header><a class="logo" href="index.html">IMPULSO<span>.</span></a><nav><a href="index.html">Inicio</a><a href="motivacion.html">Motivación</a><a href="habitos.html">Hábitos</a><a href="metas.html">Metas</a><a href="superacion.html">Superación</a></nav></header><main><section class="simple"><p class="eyebrow">RETO IMPULSO</p><h1>7 DÍAS.<br><span>7 ACCIONES.</span></h1><p class="hero-text">Una semana para demostrarte que puedes ser constante.</p><ol><li>Define una meta pequeña.</li><li>Ordena un espacio de trabajo.</li><li>Haz 20 minutos de actividad.</li><li>Trabaja 25 minutos sin distracciones.</li><li>Escribe tres cosas que hayas logrado.</li><li>Haz una tarea que llevas posponiendo.</li><li>Revisa tu semana y elige el siguiente objetivo.</li></ol><a class="button" href="index.html">VOLVER →</a></section></main><footer><div class="logo">IMPULSO<span>.</span></div><p>Motívate. Actúa. Avanza.</p></footer></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reto Impulso de 7 días: siete acciones concretas para construir constancia, disciplina y crecimiento personal.">
+  <title>Reto de 7 días — Impulso</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">IMPULSO<span>.</span></a>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="motivacion.html">Motivación</a>
+    <a href="habitos.html">Hábitos</a>
+    <a href="metas.html">Metas</a>
+    <a href="superacion.html">Superación</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main>
+<section class="challenge-hero">
+  <div class="simple challenge-intro">
+    <p class="eyebrow">RETO IMPULSO</p>
+    <h1>7 DÍAS.<br><span>7 ACCIONES.</span></h1>
+    <p class="hero-text">No se trata de cambiar tu vida en una semana. Se trata de demostrarte que puedes empezar y mantenerte en movimiento.</p>
+  </div>
+</section>
+
+<section class="reto-wrap" aria-label="Progreso del reto">
+  <div class="progress-header">
+    <div>
+      <p class="eyebrow">TU PROGRESO</p>
+      <h2><span id="progressCount">0/7</span> días completados</h2>
+    </div>
+    <button id="resetButton" class="outline reset-button" type="button">REINICIAR RETO</button>
+  </div>
+
+  <div class="progress-track" aria-hidden="true">
+    <div id="progressBar" class="progress-bar"></div>
+  </div>
+
+  <div id="daysContainer" class="days-grid"></div>
+
+  <div id="completion" class="completion-message" hidden>
+    <div class="completion-icon">✓</div>
+    <p class="eyebrow">LO CONSEGUISTE</p>
+    <h2>Reto completado.</h2>
+    <p>Terminaste los 7 días. Lo importante ahora es conservar lo que aprendiste y convertirlo en parte de tu vida.</p>
+    <button id="completionReset" class="button" type="button">REINICIAR RETO</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="logo">IMPULSO<span>.</span></div>
+  <p>Motívate. Actúa. Avanza.</p>
+  <p class="copyright">© 2026 Impulso. Contenido original. · <a href="privacidad.html">Privacidad</a> · <a href="contacto.html">Contacto</a></p>
+</footer>
+
+<script>
+const challengeDays = [
+  { title: "Define tu meta", explanation: "Dale dirección a tu esfuerzo: una meta clara hace que sea más fácil decidir qué hacer después.", action: "Escribe una meta que realmente quieras conseguir y por qué." },
+  { title: "Elimina una distracción", explanation: "Observa qué roba tu atención y haz espacio para lo que de verdad importa.", action: "Reduce durante el día algo que te quita tiempo innecesariamente." },
+  { title: "Haz algo que estás posponiendo", explanation: "Dejar de aplazar una tarea pequeña puede devolverte sensación de control y confianza.", action: "Completa una tarea que llevas evitando." },
+  { title: "Organiza tu día", explanation: "No necesitas una lista interminable. Priorizar te permite avanzar con intención.", action: "Planifica las 3 tareas más importantes del día." },
+  { title: "Aprende algo", explanation: "El crecimiento también se construye dedicando unos minutos a aprender de forma intencional.", action: "Dedica al menos 20 minutos a aprender algo útil." },
+  { title: "Sal de tu zona de confort", explanation: "La confianza crece cuando haces pequeñas cosas que antes evitabas.", action: "Haz algo pequeño que normalmente evitarías por miedo, pereza o inseguridad." },
+  { title: "Mira hacia atrás", explanation: "Cerrar el reto con reflexión te ayuda a identificar qué funcionó y qué vale la pena mantener.", action: "Revisa los seis días anteriores y escribe qué cambió y qué quieres mantener." }
+];
+
+const storageKey = "impulsoReto7Dias";
+let completed = loadProgress();
+
+function loadProgress() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey));
+    return Array.isArray(saved) && saved.length === 7 ? saved.map(Boolean) : Array(7).fill(false);
+  } catch (error) {
+    return Array(7).fill(false);
+  }
+}
+
+function saveProgress() {
+  localStorage.setItem(storageKey, JSON.stringify(completed));
+}
+
+function render() {
+  const container = document.getElementById("daysContainer");
+  const count = completed.filter(Boolean).length;
+  document.getElementById("progressCount").textContent = count + "/7";
+  document.getElementById("progressBar").style.width = (count / 7 * 100) + "%";
+
+  container.innerHTML = challengeDays.map((day, index) => {
+    const done = completed[index];
+    const unlocked = index === 0 || completed[index - 1];
+    const locked = !unlocked && !done;
+
+    return `
+      <article class="day-card ${done ? "completed" : ""} ${locked ? "locked" : ""}">
+        <div class="day-number">${String(index + 1).padStart(2, "0")}</div>
+        <div class="day-content">
+          <div class="day-status">${done ? "COMPLETADO" : locked ? "BLOQUEADO" : "DÍA " + (index + 1)}</div>
+          <h3>${day.title}</h3>
+          <p>${day.explanation}</p>
+          <div class="day-action"><strong>Acción:</strong> ${day.action}</div>
+          ${done
+            ? '<button class="complete-button done" type="button" disabled>✓ DÍA COMPLETADO</button>'
+            : locked
+              ? '<button class="complete-button locked-button" type="button" disabled>🔒 COMPLETA EL DÍA ANTERIOR</button>'
+              : `<button class="complete-button" type="button" onclick="completeDay(${index})">COMPLETAR DÍA →</button>`
+          }
+        </div>
+      </article>
+    `;
+  }).join("");
+
+  const finished = count === 7;
+  document.getElementById("completion").hidden = !finished;
+  if (finished) {
+    document.getElementById("completion").scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
+function completeDay(index) {
+  if (index > 0 && !completed[index - 1]) return;
+  completed[index] = true;
+  saveProgress();
+  render();
+}
+
+function resetChallenge() {
+  if (!confirm("¿Seguro que quieres reiniciar tu progreso?")) return;
+  completed = Array(7).fill(false);
+  saveProgress();
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.getElementById("resetButton").addEventListener("click", resetChallenge);
+document.getElementById("completionReset").addEventListener("click", resetChallenge);
+render();
+</script>
+</body>
+</html>

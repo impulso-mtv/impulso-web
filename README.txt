@@ -1,14 +1,17 @@
-IMPULSO — sitio web inicial
-================================
+IMPULSO WEB V3
 
-1. Abre index.html con Google Chrome para ver la página.
-2. index.html contiene la estructura y estilos.css contiene el diseño.
-3. La frase diaria cambia al pulsar "OTRA FRASE".
+Sitio estático de motivación y crecimiento personal para GitHub Pages.
 
-Siguiente etapa:
-- Crear páginas reales para cada sección.
-- Escribir artículos originales.
-- Añadir favicon, logo e imágenes.
-- Añadir páginas de privacidad, cookies y contacto.
-- Publicar el sitio en un hosting gratuito.
-- Cuando corresponda, preparar la integración con Google AdSense.
+Cambios principales:
+- Reto de 7 días interactivo.
+- Progreso 0/7 a 7/7.
+- Desbloqueo progresivo.
+- Persistencia con localStorage.
+- Mensaje de finalización y reinicio.
+- Mejoras visuales globales: hover, botones, tarjetas, sombras y animaciones sutiles.
+- Diseño responsive y compatible con GitHub Pages.
+- Se conservan los artículos y páginas existentes.
+
+IMPORTANTE:
+index.html debe permanecer en la raíz del repositorio.
+No requiere servidor, base de datos ni backend.
