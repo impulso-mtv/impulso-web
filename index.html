@@ -1,95 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Impulso: motivación, disciplina, hábitos, metas, productividad y superación personal con consejos prácticos para avanzar cada día.">
-  <link rel="canonical" href="https://impulso-mtv.github.io/impulso-web/">
-  <title>Impulso — Motívate. Actúa. Avanza.</title>
-  <link rel="stylesheet" href="estilos.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Impulso: motivación, disciplina, hábitos, metas, productividad y superación personal con ideas prácticas para avanzar cada día.">
+<meta name="theme-color" content="#0b0b0e"><link rel="canonical" href="https://impulso-mtv.github.io/impulso-web/">
+<meta property="og:title" content="Impulso — Motívate. Actúa. Avanza."><meta property="og:description" content="Ideas prácticas de motivación, disciplina, hábitos, productividad y superación personal."><meta property="og:image" content="https://impulso-mtv.github.io/impulso-web/impulso-hero.png"><meta property="og:type" content="website">
+<link rel="stylesheet" href="estilos.css"><title>Impulso — Motívate. Actúa. Avanza.</title>
 </head>
 <body>
-  <header>
-    <a class="logo" href="index.html">IMPULSO<span>.</span></a>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#temas">Temas</a>
-      <a href="#articulos">Artículos</a><a href="contacto.html">Contacto</a>
-      <a href="#reto">Reto 7 días</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-content">
-        <p class="eyebrow">MOTIVACIÓN • DISCIPLINA • CRECIMIENTO</p>
-        <h1>NO ESPERES A SENTIRTE<br><strong>MOTIVADO.</strong></h1>
-        <p class="hero-text">Empieza. Construye disciplina, alcanza tus metas y conviértete en una mejor versión de ti.</p>
-        <a class="button" href="#temas">EMPIEZA AHORA →</a>
-      </div>
-      <div class="hero-shape">+</div>
-    </section>
-
-    <section class="quote">
-      <p>“El primer paso no tiene que ser perfecto. Solo tiene que existir.”</p>
-      <span>— IMPULSO</span>
-    </section>
-
-    <section class="section" id="temas">
-      <p class="eyebrow">ENCUENTRA TU IMPULSO</p>
-      <h2>¿QUÉ QUIERES <span>MEJORAR?</span></h2>
-      <div class="cards">
-        <article><div class="icon">🔥</div><h3>Motivación</h3><p>Ideas para volver a levantarte cuando las ganas desaparecen.</p><a class="card-link" href="motivacion.html">EXPLORAR →</a></article>
-        <article><div class="icon">⚡</div><h3>Disciplina y hábitos</h3><p>Convierte pequeñas acciones en rutinas que puedas mantener.</p><a class="card-link" href="habitos.html">EXPLORAR →</a></article>
-        <article><div class="icon">🎯</div><h3>Metas y productividad</h3><p>Organiza tus objetivos y transforma tus planes en acciones.</p><a class="card-link" href="metas.html">EXPLORAR →</a></article>
-        <article><div class="icon">💪</div><h3>Superación personal</h3><p>Aprende de los errores y sigue avanzando.</p><a class="card-link" href="superacion.html">EXPLORAR →</a></article>
-      </div>
-    </section>
-
-    <section class="section articles" id="articulos">
-      <p class="eyebrow">PARA EMPEZAR</p>
-      <h2>ARTÍCULOS <span>DESTACADOS</span></h2>
-      <div class="article-grid">
-        <article class="article-card"><small>MOTIVACIÓN</small><h3>Cómo recuperar la motivación cuando quieres rendirte</h3><p>La motivación no siempre llega antes de actuar...</p><a href="motivacion-1.html">LEER →</a></article>
-        <article class="article-card"><small>HÁBITOS</small><h3>7 hábitos para construir una disciplina más fuerte</h3><p>Los grandes cambios comienzan con acciones pequeñas...</p><a href="habitos-1.html">LEER →</a></article>
-        <article class="article-card"><small>PRODUCTIVIDAD</small><h3>Cómo dejar de procrastinar y empezar hoy</h3><p>No necesitas terminarlo todo. Necesitas comenzar...</p><a href="metas-3.html">LEER →</a></article>
-      </div>
-    </section>
-
-    <section class="challenge" id="reto">
-      <div>
-        <p class="eyebrow">¿TE ATREVES?</p>
-        <h2>RETO <span>7 DÍAS</span></h2>
-        <p>Durante una semana, haz una acción pequeña cada día para demostrarte que puedes ser constante.</p>
-      </div>
-      <a class="button dark" href="reto.html">ACEPTO EL RETO →</a>
-    </section>
-
-    <section class="daily">
-      <p class="eyebrow">TU RECORDATORIO DE HOY</p>
-      <h2 id="dailyQuote">No necesitas ganas para comenzar.</h2>
-      <button class="outline" onclick="newQuote()">OTRA FRASE</button>
-    </section>
-  </main>
-
-  <footer>
-    <div class="logo">IMPULSO<span>.</span></div>
-    <p>Motívate. Actúa. Avanza.</p>
-    <p class="copyright">© 2026 Impulso. Contenido original. · <a href="privacidad.html">Privacidad</a> · <a href="contacto.html">Contacto</a></p>
-  </footer>
-
-  <script>
-    const quotes = [
-      "No necesitas ganas para comenzar.",
-      "La constancia vence a la intensidad pasajera.",
-      "Haz hoy algo por lo que tu yo del futuro te agradezca.",
-      "Un pequeño paso sigue siendo un paso.",
-      "Tu progreso no tiene que ser perfecto para ser real."
-    ];
-    function newQuote() {
-      const q = quotes[Math.floor(Math.random() * quotes.length)];
-      document.getElementById("dailyQuote").textContent = q;
-    }
-  </script>
-</body>
-</html>
+<header class="site-header"><a class="logo" href="index.html">IMPULSO<span>.</span></a><button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button><nav class="main-nav"><a class="active" href="index.html">Inicio</a><a href="motivacion.html">Motivación</a><a href="habitos.html">Hábitos</a><a href="metas.html">Metas</a><a href="superacion.html">Superación</a><a href="reto.html">Reto 7 días</a><a href="contacto.html">Contacto</a></nav></header>
+<main>
+<section class="hero-home" id="inicio"><div class="hero-overlay"></div><div class="hero-content"><p class="eyebrow">MOTIVACIÓN · DISCIPLINA · CRECIMIENTO</p><h1>NO ESPERES A SENTIRTE <span>MOTIVADO.</span></h1><p class="hero-text">La vida no cambia cuando piensas en hacerlo. Cambia cuando decides dar el siguiente paso.</p><div class="hero-actions"><a class="button" href="reto.html">EMPIEZA EL RETO →</a><a class="button ghost" href="#temas">EXPLORAR IMPULSO</a></div><div class="hero-proof"><span><b>20+</b> artículos</span><span><b>4</b> áreas de crecimiento</span><span><b>7</b> días de acción</span></div></div><div class="hero-visual" aria-hidden="true"><div class="hero-ring"></div><div class="hero-word">AVANZA</div></div></section>
+<section class="manifesto"><div class="manifesto-line"></div><p>“No necesitas tenerlo todo resuelto. Necesitas una razón para empezar y el valor de dar el siguiente paso.”</p><span>— IMPULSO</span></section>
+<section class="section section-tight" id="temas"><div class="section-heading"><div><p class="eyebrow">ENCUENTRA TU IMPULSO</p><h2>¿QUÉ QUIERES <span>MEJORAR?</span></h2></div><p class="section-intro">Elige un área, aprende algo útil y conviértelo en una acción que puedas aplicar hoy.</p></div>
+<div class="cards feature-cards"><article><div class="card-top"><span class="icon">01</span><span class="mini-label">MENTALIDAD</span></div><h3>Motivación</h3><p>Recupera el impulso, supera los momentos de duda y aprende a actuar incluso cuando las ganas no aparecen.</p><a class="card-link" href="motivacion.html">EXPLORAR →</a></article><article><div class="card-top"><span class="icon">02</span><span class="mini-label">CONSTANCIA</span></div><h3>Disciplina y hábitos</h3><p>Construye rutinas realistas, reduce la fricción y convierte pequeñas decisiones en comportamientos sostenibles.</p><a class="card-link" href="habitos.html">EXPLORAR →</a></article><article><div class="card-top"><span class="icon">03</span><span class="mini-label">ACCIÓN</span></div><h3>Metas y productividad</h3><p>Ordena tus prioridades, deja de posponer y transforma objetivos grandes en pasos concretos.</p><a class="card-link" href="metas.html">EXPLORAR →</a></article><article><div class="card-top"><span class="icon">04</span><span class="mini-label">RESILIENCIA</span></div><h3>Superación personal</h3><p>Aprende de los errores, atraviesa la incomodidad y desarrolla una relación más fuerte con tu propio progreso.</p><a class="card-link" href="superacion.html">EXPLORAR →</a></article></div></section>
+<section class="image-break"><div class="image-break-copy"><p class="eyebrow">TU CAMINO NO TIENE QUE SER PERFECTO</p><h2>LO IMPORTANTE ES <span>SEGUIR AVANZANDO.</span></h2><p>Cada hábito, cada decisión y cada pequeño intento suma. Impulso existe para ayudarte a convertir intención en movimiento.</p><a class="button" href="reto.html">DAR EL PRIMER PASO →</a></div></section>
+<section class="section articles" id="articulos"><div class="section-heading"><div><p class="eyebrow">LECTURAS PARA HOY</p><h2>ARTÍCULOS <span>DESTACADOS</span></h2></div><p class="section-intro">Contenido práctico para leer, pensar y aplicar. Sin fórmulas mágicas: ideas que puedes llevar a tu vida.</p></div><div class="article-grid"><article class="article-card"><small>MOTIVACIÓN</small><h3>Cómo recuperar la motivación cuando quieres rendirte</h3><p>Aprende a reducir la presión, volver a moverte y reconstruir el impulso con pasos pequeños.</p><a href="motivacion-1.html">LEER ARTÍCULO →</a></article><article class="article-card"><small>HÁBITOS</small><h3>7 hábitos para construir una disciplina más fuerte</h3><p>Una guía práctica para crear constancia sin depender de estar motivado todos los días.</p><a href="habitos-1.html">LEER ARTÍCULO →</a></article><article class="article-card"><small>PRODUCTIVIDAD</small><h3>Cómo dejar de procrastinar y empezar hoy</h3><p>Entiende por qué pospones y utiliza acciones simples para romper el ciclo de la evitación.</p><a href="metas-3.html">LEER ARTÍCULO →</a></article></div></section>
+<section class="challenge-home"><div><p class="eyebrow">7 DÍAS DE ACCIÓN</p><h2>MENOS EXCUSAS.<br><span>MÁS MOVIMIENTO.</span></h2><p>Un reto interactivo para dejar de pensar tanto y demostrarte, día a día, que puedes ser constante.</p></div><div class="challenge-meter"><div class="meter-number">7</div><div><strong>DÍAS</strong><span>1 acción concreta por día</span></div></div><a class="button dark" href="reto.html">ACEPTO EL RETO →</a></section>
+<section class="daily"><p class="eyebrow">TU RECORDATORIO DE HOY</p><h2 id="dailyQuote">No necesitas ganas para comenzar.</h2><button class="outline" onclick="newQuote()">CAMBIAR FRASE ↻</button></section>
+</main>
+<footer><div class="footer-grid"><div><div class="logo">IMPULSO<span>.</span></div><p>Motívate. Actúa. Avanza.</p></div><div><strong>Explora</strong><a href="motivacion.html">Motivación</a><a href="habitos.html">Hábitos</a><a href="metas.html">Metas</a><a href="superacion.html">Superación</a></div><div><strong>Información</strong><a href="reto.html">Reto 7 días</a><a href="contacto.html">Contacto</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a></div></div><p class="copyright">© 2026 Impulso. Contenido original.</p></footer>
+<script src="sitio.js"></script><script>const quotes=["No necesitas ganas para comenzar.","La constancia vence a la intensidad pasajera.","Haz hoy algo por lo que tu yo del futuro te agradezca.","Un pequeño paso sigue siendo un paso.","Tu progreso no tiene que ser perfecto para ser real.","La disciplina empieza con una decisión pequeña."];function newQuote(){const q=quotes[Math.floor(Math.random()*quotes.length)];document.getElementById('dailyQuote').textContent=q;}</script>
+</body></html>

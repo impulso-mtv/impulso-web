@@ -8,17 +8,7 @@
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<header>
-  <a class="logo" href="index.html">IMPULSO<span>.</span></a>
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="motivacion.html">Motivación</a>
-    <a href="habitos.html">Hábitos</a>
-    <a href="metas.html">Metas</a>
-    <a href="superacion.html">Superación</a>
-    <a href="contacto.html">Contacto</a>
-  </nav>
-</header>
+<header class="site-header"><a class="logo" href="index.html">IMPULSO<span>.</span></a><button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button><nav class="main-nav"><a href="index.html">Inicio</a><a href="motivacion.html">Motivación</a><a href="habitos.html">Hábitos</a><a href="metas.html">Metas</a><a href="superacion.html">Superación</a><a href="reto.html">Reto 7 días</a><a href="contacto.html">Contacto</a></nav></header>
 
 <main>
 <section class="challenge-hero">
@@ -143,5 +133,5 @@ document.getElementById("resetButton").addEventListener("click", resetChallenge)
 document.getElementById("completionReset").addEventListener("click", resetChallenge);
 render();
 </script>
-</body>
+<script src="sitio.js"></script></body>
 </html>
