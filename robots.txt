@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://impulso-mtv.github.io/impulso-web/sitemap.xml
+
+Sitemap: https://impulso.living/sitemap.xml
