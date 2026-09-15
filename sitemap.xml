@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://impulso-mtv.github.io/impulso-web/</loc></url>
-  <url><loc>https://impulso-mtv.github.io/impulso-web/motivacion.html</loc></url>
-  <url><loc>https://impulso-mtv.github.io/impulso-web/habitos.html</loc></url>
-  <url><loc>https://impulso-mtv.github.io/impulso-web/metas.html</loc></url>
-  <url><loc>https://impulso-mtv.github.io/impulso-web/superacion.html</loc></url>
-  <url><loc>https://impulso-mtv.github.io/impulso-web/reto.html</loc></url>
-  <url><loc>https://impulso-mtv.github.io/impulso-web/contacto.html</loc></url>
-  <url><loc>https://impulso-mtv.github.io/impulso-web/privacidad.html</loc></url>
-  <url><loc>https://impulso-mtv.github.io/impulso-web/cookies.html</loc></url>
-  <url><loc>https://impulso-mtv.github.io/impulso-web/apoya.html</loc></url>
+
+  <url>
+    <loc>https://impulso.living/</loc>
+  </url>
+
+  <url>
+    <loc>https://impulso.living/motivacion.html</loc>
+  </url>
+
+  <url>
+    <loc>https://impulso.living/habitos.html</loc>
+  </url>
+
+  <url>
+    <loc>https://impulso.living/metas.html</loc>
+  </url>
+
+  <url>
+    <loc>https://impulso.living/superacion.html</loc>
+  </url>
+
+  <url>
+    <loc>https://impulso.living/reto.html</loc>
+  </url>
+
+  <url>
+    <loc>https://impulso.living/contacto.html</loc>
+  </url>
+
+  <url>
+    <loc>https://impulso.living/privacidad.html</loc>
+  </url>
+
+  <url>
+    <loc>https://impulso.living/cookies.html</loc>
+  </url>
+
+  <url>
+    <loc>https://impulso.living/apoya.html</loc>
+  </url>
+
 </urlset>
