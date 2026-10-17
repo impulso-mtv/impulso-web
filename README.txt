@@ -23,3 +23,11 @@ https://formspree.io/f/abc123xy
 No inventes el endpoint. Créalo en tu cuenta de Formspree.
 
 La versión actual mantiene el sitio estático y no requiere base de datos.
+
+
+NOVEDADES DE ESTA VERSION (17-10-2026)
+- Nueva página herramientas.html con Ruta de crecimiento, retos de 7 y 21 días y test interactivo.
+- El progreso de los retos se guarda localmente en el navegador, sin cuentas.
+- Inicio sustituye el Mapa personal por accesos destacados a las herramientas.
+- Los 20 artículos incluyen Fuentes y lecturas recomendadas y enlaces internos a artículos relacionados.
+- Se conserva el código Monetag existente en las páginas donde ya estaba presente, así como Analytics, verificación y configuración del sitio.

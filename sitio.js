@@ -505,3 +505,44 @@
   refreshConnections();
 })();
 
+
+
+/* IMPULSO — Ruta de crecimiento, retos y test. Progreso local en este navegador. */
+(function(){
+  const page=document.querySelector('#retos');
+  if(page){
+    const tabs=[...page.querySelectorAll('[data-challenge]')], box7=page.querySelector('#missions7'), box21=page.querySelector('#missions21');
+    const progressText=page.querySelector('#challengeProgressText'), progressBar=page.querySelector('#challengeProgressBar'), encouragement=page.querySelector('#challengeEncouragement'), status=page.querySelector('#challengeStatus');
+    let current=7; const keys={7:'impulso_reto_7_v2',21:'impulso_reto_21_v2'};
+    function read(n){try{return JSON.parse(localStorage.getItem(keys[n])||'{}')}catch(e){return {}}}
+    function save(n,data){try{localStorage.setItem(keys[n],JSON.stringify(data));status.textContent='Progreso guardado en este dispositivo.'}catch(e){status.textContent='No se pudo guardar el progreso. Revisa la configuración del navegador.'}}
+    function render(){const box=current===7?box7:box21;const data=read(current);const checks=[...box.querySelectorAll('[data-mission-check]')];checks.forEach(c=>{c.checked=!!data[c.dataset.missionCheck];c.closest('.mission-card')?.classList.toggle('completed',c.checked)});const done=checks.filter(c=>c.checked).length;progressText.textContent=`${done} de ${checks.length} misiones`;progressBar.style.width=(done/checks.length*100)+'%';encouragement.textContent=done===checks.length?'¡Reto completado! Revisa lo que aprendiste y decide qué quieres mantener.':done===0?'Empieza con una misión pequeña.':done>=checks.length/2?'Ya has superado más de la mitad. Continúa a tu ritmo.':'Cada misión completada cuenta. No necesitas hacerlo perfecto.';}
+    tabs.forEach(t=>t.addEventListener('click',()=>{current=Number(t.dataset.challenge);tabs.forEach(x=>x.classList.toggle('active',x===t));box7.hidden=current!==7;box21.hidden=current!==21;render()}));
+    page.querySelectorAll('[data-mission-check]').forEach(c=>c.addEventListener('change',()=>{const data=read(current);data[c.dataset.missionCheck]=c.checked;save(current,data);render()}));
+    page.querySelector('#resetChallenge')?.addEventListener('click',()=>{if(confirm('¿Quieres reiniciar el progreso de este reto?')){localStorage.removeItem(keys[current]);render();status.textContent='Reto reiniciado. Puedes empezar de nuevo.'}});
+    render();
+  }
+  const form=document.querySelector('#impulseTest');
+  if(form){
+    const result=document.querySelector('#testResult'),title=document.querySelector('#testTitle'),desc=document.querySelector('#testDescription'),link=document.querySelector('#testLink'),link2=document.querySelector('#testLink2');
+    const results={
+      start:{title:'Tu principal barrera parece ser el inicio',desc:'No necesitas resolverlo todo ni esperar a sentirte preparado. Reduce la tarea a una acción de cinco minutos, prepara lo necesario y empieza por la versión más sencilla. Observa si la dificultad disminuye cuando el primer paso es concreto.',href:'motivacion-2.html',second:'motivacion-1.html',secondLabel:'RECUPERAR LA MOTIVACIÓN →'},
+      habit:{title:'Te conviene construir una rutina sostenible',desc:'Tu reto puede estar menos en saber qué hacer y más en repetirlo. Vincula una acción pequeña a una señal cotidiana, define un mínimo para los días difíciles y retoma sin intentar compensar los días que falten.',href:'habitos-2.html',second:'habitos-4.html',secondLabel:'TRABAJAR LA CONSTANCIA →'},
+      focus:{title:'Necesitas claridad y menos frentes abiertos',desc:'Demasiadas prioridades pueden dispersar tu energía. Elige una meta principal para los próximos siete días, define el siguiente paso visible y reserva un bloque breve para hacerlo antes de añadir nuevas tareas.',href:'metas-1.html',second:'metas-4.html',secondLabel:'CREAR UN PLAN →'},
+      setback:{title:'Tu siguiente paso es aprender a retomar',desc:'Un tropiezo aporta información, pero no define tu capacidad. Describe qué ocurrió sin atacarte, identifica una sola cosa que puedas ajustar y vuelve con una acción pequeña. La meta es aprender a regresar, no evitar todos los errores.',href:'superacion-2.html',second:'superacion-4.html',secondLabel:'FORTALECER LA CONFIANZA →'},
+      energy:{title:'Conviene revisar tu carga y tu ritmo',desc:'Cuando hay demasiadas exigencias, pedirte más disciplina puede no resolver el problema. Distingue lo imprescindible de lo que puede esperar, reduce una demanda concreta y protege un descanso real. Avanzar también requiere un ritmo que puedas sostener.',href:'motivacion-3.html',second:'superacion-1.html',secondLabel:'REVISAR TU PROGRESO →'}
+    };
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      const counts={start:0,habit:0,focus:0,setback:0,energy:0};
+      for(let i=1;i<=10;i++){const v=form.querySelector(`input[name="q${i}"]:checked`)?.value;if(v&&counts[v]!==undefined)counts[v]++;}
+      const order=['start','habit','focus','setback','energy'];
+      const winner=order.reduce((best,key)=>counts[key]>counts[best]?key:best,order[0]);
+      const r=results[winner];title.textContent=r.title;desc.textContent=r.desc;link.href=r.href;link2.href=r.second;link2.textContent=r.secondLabel;
+      result.querySelector('[data-test-score]')?.remove();
+      const scoreLine=document.createElement('p');scoreLine.className='quiz-mini';scoreLine.dataset.testScore='true';scoreLine.textContent=`Tus respuestas apuntan principalmente a esta área (${counts[winner]} de 10 respuestas). Es una orientación, no una medida científica.`;title.insertAdjacentElement('afterend',scoreLine);
+      result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+    document.querySelector('#resetTest')?.addEventListener('click',()=>{form.reset();result.hidden=true;result.querySelector('[data-test-score]')?.remove();form.scrollIntoView({behavior:'smooth',block:'start'});});
+  }
+})();
