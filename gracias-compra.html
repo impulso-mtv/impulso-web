@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Gracias por elegir el ebook de IMPULSO. Sigue avanzando hacia tus metas.">
+  <title>Gracias por tu compra | IMPULSO</title>
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root{color-scheme:dark;--bg:#101010;--panel:#191919;--orange:#ff7a18;--orange2:#ff9b45;--text:#f7f7f7;--muted:#c5c5c5;--line:#333}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#302016 0,#101010 52%);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+    header{padding:22px 5%;border-bottom:1px solid #ffffff16;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .brand{font-weight:900;letter-spacing:2px;font-size:1.25rem;text-decoration:none;color:white}.brand span{color:var(--orange)}
+    nav a{color:#eee;text-decoration:none;font-size:.95rem}main{width:min(760px,92%);margin:auto;padding:54px 0 64px}
+    .card{background:linear-gradient(145deg,#1b1b1b,#141414);border:1px solid #ffffff18;border-radius:24px;padding:clamp(26px,6vw,54px);box-shadow:0 24px 80px #0007;text-align:center}
+    .symbol{width:82px;height:82px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;background:#ff7a181c;border:1px solid #ff7a1870;color:var(--orange);font-size:2.5rem}
+    .eyebrow{color:var(--orange2);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}h1{font-size:clamp(2rem,6vw,3.3rem);line-height:1.08;margin:12px 0 18px}p{color:var(--muted);font-size:1.04rem;line-height:1.75}
+    .steps{margin:28px 0;text-align:left;display:grid;gap:12px}.step{display:flex;gap:13px;align-items:flex-start;padding:15px;background:#ffffff06;border:1px solid #ffffff12;border-radius:14px}.num{flex:0 0 30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#171717;font-weight:900}.step strong{display:block;margin:2px 0 4px}.step p{margin:0;font-size:.94rem}
+    .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:800;transition:transform .15s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--orange);color:#171717}.secondary{border:1px solid #ffffff30;color:#fff}
+    .note{font-size:.88rem;margin-top:24px;color:#a9a9a9}.note a{color:var(--orange2)}footer{text-align:center;padding:22px;color:#8e8e8e;font-size:.85rem;border-top:1px solid #ffffff12}
+    @media(max-width:520px){header{padding:18px 5%}.card{border-radius:18px}.actions{flex-direction:column}.btn{width:100%}}
+  </style>
+</head>
+<body>
+  <header><a class="brand" href="/">IMPUL<span>SO</span></a><nav><a href="/">Volver al inicio</a></nav></header>
+  <main>
+    <section class="card">
+      <div class="symbol" aria-hidden="true">✓</div>
+      <div class="eyebrow">Un paso más hacia tus metas</div>
+      <h1>¡Gracias por tu compra!</h1>
+      <p>Gracias por elegir el ebook de <strong>IMPULSO</strong>. Tu decisión de invertir en tu crecimiento personal es el comienzo de algo importante: ahora toca llevar las ideas a la acción.</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><strong>Comprueba el estado del pago</strong><p>Esta página es un agradecimiento y no confirma por sí sola que el pago haya sido aprobado. Revisa la confirmación de Wompi o PayPal.</p></div></div>
+        <div class="step"><div class="num">2</div><div><strong>Busca las instrucciones de entrega</strong><p>Revisa el correo y las instrucciones que recibiste durante la compra. Si no encuentras el ebook, escríbenos para recibir ayuda.</p></div></div>
+        <div class="step"><div class="num">3</div><div><strong>Empieza con una acción pequeña</strong><p>Lee a tu ritmo, toma notas y aplica una idea cada día. El progreso se construye con constancia.</p></div></div>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="/">Seguir explorando IMPULSO</a>
+        <a class="btn secondary" href="https://formspree.io/f/xzebojnb">Necesito ayuda con mi compra</a>
+      </div>
+      <p class="note">Si contactas con nosotros, incluye el correo utilizado en la compra y la referencia del pago. No envíes datos completos de tarjetas ni contraseñas.</p>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> IMPULSO · Motívate. Actúa. Avanza.</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
