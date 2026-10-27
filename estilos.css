@@ -467,3 +467,8 @@
 @media(max-width:850px){.tool-feature-grid,.mission-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tools-hero{padding-top:64px}.sources-related-section{grid-template-columns:1fr}}
 @media(max-width:580px){.tool-feature-grid,.mission-grid{grid-template-columns:1fr}.tool-feature{min-height:unset}.tools-section{padding:52px 17px}.tool-route-stage{grid-template-columns:44px 1fr;padding:18px;gap:13px}.route-step{width:42px;height:42px;border-radius:12px}.challenge-summary{grid-template-columns:1fr;padding:17px}.challenge-summary button{grid-column:auto}.tools-hero{padding:58px 19px 46px}.tools-hero h1{font-size:clamp(2.5rem,13vw,4.3rem)}.sources-card,.related-card{padding:18px}.sources-related-section{margin-top:28px}}
 @media(prefers-reduced-motion:reduce){.tool-feature,.tool-route-stage,.challenge-progress span{transition:none!important;scroll-behavior:auto!important}}
+
+
+/* Accesibilidad: contraste de texto en botones y enlace de apoyo */
+.button:not(.ghost){color:#101014}
+.support-link{color:#101014!important}
