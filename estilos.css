@@ -472,3 +472,8 @@
 /* Accesibilidad: contraste de texto en botones y enlace de apoyo */
 .button:not(.ghost){color:#101014}
 .support-link{color:#101014!important}
+
+/* INICIO — navegación más directa y jerarquía simplificada */
+.home-hero-focused{min-height:630px}.home-hero-focused .hero-content{max-width:790px;padding:76px 0}.home-hero-focused .hero-content h1{max-width:760px}.home-hero-focused .hero-text{max-width:600px}.home-paths{padding-top:76px;padding-bottom:66px}.home-paths .feature-cards article{min-height:270px}.home-tools{padding-top:70px;padding-bottom:70px}.home-tools .tool-feature{min-height:265px}.home-reading{padding-top:74px;padding-bottom:78px}.home-all-articles{display:flex;justify-content:center;margin-top:30px}.home-challenge{padding-top:56px;padding-bottom:56px}
+@media(max-width:850px){.home-hero-focused{min-height:590px}.home-hero-focused .hero-content{padding:70px 0}.home-paths .feature-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.home-hero-focused{min-height:590px}.home-hero-focused .hero-content{padding:58px 0}.home-hero-focused .hero-content h1{font-size:clamp(43px,13vw,66px);letter-spacing:-2.5px}.home-hero-focused .hero-text{font-size:16px}.home-hero-focused .hero-actions{align-items:stretch;flex-direction:column;max-width:360px}.home-hero-focused .hero-actions .button{width:100%;text-align:center}.home-hero-focused .hero-proof{gap:15px;margin-top:30px}.home-paths .feature-cards{grid-template-columns:1fr}.home-paths .feature-cards article{min-height:unset;padding:23px}.home-tools .tool-feature{min-height:unset}.home-reading .article-grid{grid-template-columns:1fr}.home-challenge{gap:25px}.home-challenge .button{width:100%}}
