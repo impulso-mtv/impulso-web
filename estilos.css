@@ -491,3 +491,9 @@
 :focus-visible{outline:3px solid #ffb18a;outline-offset:3px}.main-nav a{color:#ededf0}.section-intro,.feature-cards p,.article-card p{color:#c1c2c9}
 
 @media(max-width:760px){.privacy-notice{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding:10px 12px}.privacy-notice p{font-size:11px;line-height:1.35}.privacy-notice button{width:auto;align-self:center;padding:9px 12px;white-space:nowrap}}
+
+
+/* Visible author credit on article pages */
+.article-byline{margin:.35rem 0 1.25rem;color:#d0d1d7;font-size:.92rem;line-height:1.5}
+.article-byline a{color:#ffb47f;font-weight:750;text-decoration:underline;text-underline-offset:.18em}
+.article-byline a:hover{color:#ffd2b2}
